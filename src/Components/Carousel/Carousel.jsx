@@ -4,7 +4,7 @@ import { ShoppingCart, DollarSign, Users } from "lucide-react";
 
 // استيراد الصور من مجلد assets
 import heroMan from "../../assets/images/1.png";
-import storeIcon from "../../assets/images/Vector.png";
+import storeIcon from "../../assets/images/vector.png";
 import productImg from "../../assets/images/shoes.png";
 
 const HeroSection = () => {

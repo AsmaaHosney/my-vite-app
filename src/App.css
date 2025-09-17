@@ -1,0 +1,9 @@
+.sectionHeight{
+    height: calc(100vh - 70px);
+    /* background-color: aqua; */
+}
+.h{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}

@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "AvenirArabic";
+  src: url("./assets/fonts/alfont_com_AlFont_com_AvenirArabic-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirArabic";
+  src: url(".\assets\fonts\AvenirArabic-Light1.otf") format("opentype");
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirArabic";
+  src: url(".\assets\fonts\AvenirArabic-Book.otf") format("opentype");
+  font-weight: 400; /* Book */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirArabic";
+  src: url(".\assets\fonts\AvenirArabic-Medium.otf") format("opentype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvenirArabic";
+  src: url(".\assets\fonts\AvenirArabic-Heavy.otf") format("opentype");
+  font-weight: 700; /* Heavy */
+  font-style: normal;
+}
+
+
+
+body {
+  font-family: "AvenirArabic", sans-serif;
+}

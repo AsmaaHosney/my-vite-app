@@ -1,62 +1,51 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom"; // 👈 استيراد Link
 import logo from "../../assets/images/Wasl.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [lang, setLang] = useState("ar"); // "ar" or "en"
+  const [lang, setLang] = useState("ar");
 
-  // النصوص حسب اللغة
   const menuItems = {
     ar: [
-      { href: "/team", label: "المميزات" },
-      { href: "/page6", label: "الأسعار" },
-      { href: "/testimonial", label: "لماذا وصل؟" },
+      { to: "/team", label: "المميزات" },
+      { to: "/page6", label: "الأسعار" },
+      { to: "/testimonial", label: "لماذا وصل؟" },
     ],
     en: [
-      { href: "/team", label: "Features" },
-      { href: "/page6", label: "Pricing" },
-      { href: "/testimonial", label: "Why Wasl?" },
+      { to: "/team", label: "Features" },
+      { to: "/page6", label: "Pricing" },
+      { to: "/testimonial", label: "Why Wasl?" },
     ],
   };
 
   const actions = {
-    ar: {
-      login: "تسجيل الدخول",
-      tryNow: "جرّب الآن مجانا",
-      toggleLang: "🌐 English",
-    },
-    en: {
-      login: "Login",
-      tryNow: "Try for Free",
-      toggleLang: "🌐 عربي",
-    },
+    ar: { login: "تسجيل الدخول", tryNow: "جرّب الآن مجانا", toggleLang: "🌐 English" },
+    en: { login: "Login", tryNow: "Try for Free", toggleLang: "🌐 عربي" },
   };
 
   return (
-    <nav
-      dir={lang === "ar" ? "rtl" : "ltr"}
-      className="bg-white shadow-sm fixed w-full z-50"
-    >
+    <nav dir={lang === "ar" ? "rtl" : "ltr"} className="bg-white shadow-sm fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="/">
+            <Link to="/">
               <img className="h-8 w-auto" src={logo} alt="Wasl" />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
             {menuItems[lang].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
+              <Link
+                key={item.to}
+                to={item.to}
                 className="text-gray-700 hover:text-blue-600"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -102,13 +91,14 @@ export default function Navbar() {
           }`}
         >
           {menuItems[lang].map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
+            <Link
+              key={item.to}
+              to={item.to}
+              onClick={() => setIsOpen(false)} // يقفل المنيو بعد الضغط
               className="block text-gray-700 hover:text-blue-600"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <button
             onClick={() => setLang(lang === "ar" ? "en" : "ar")}

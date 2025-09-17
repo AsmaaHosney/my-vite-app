@@ -1,10 +1,7 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: "/my-vite-app/",   // 👈 اسم المستودع على GitHub
   plugins: [react()],
-  server: {
-    port: 5173, // 👈 Force Vite to run on 5173
-    strictPort: true, // 👈 Fail if 5173 is busy instead of random port
-  },
-});
+})
